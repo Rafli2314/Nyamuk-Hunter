@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="nyamuk-hunter"
+run/main_scene="uid://oc0hvsdn6bgd"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
