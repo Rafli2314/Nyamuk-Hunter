@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://oc0hvsdn6bgd"]
 
+[ext_resource type="Script" uid="uid://d1s54e71gsmem" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://teiwft87uo20" path="res://mosquito_spawner.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://drnbodo2qxngj" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cs7y07r52dgjd" path="res://mosquito.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D" unique_id=52244010]
+script = ExtResource("1_1bvp3")
 
 [node name="MosquitoSpawner" type="Node" parent="." unique_id=1919822355]
+script = ExtResource("1_h2yge")
+mosquito_scene = ExtResource("2_0xm2m")
+
+[node name="Timer" type="Timer" parent="MosquitoSpawner" unique_id=1408425242]
+wait_time = 0.5
+autostart = true
 
 [node name="Player" parent="." unique_id=681439944 instance=ExtResource("1_ig7tw")]
+position = Vector2(509, 167)
 
 [node name="Mosquito" parent="." unique_id=1679721595 instance=ExtResource("2_0xm2m")]
 position = Vector2(377, 140)
@@ -19,3 +29,4 @@ offset_left = 19.0
 offset_top = 18.0
 offset_right = 59.0
 offset_bottom = 41.0
+text = "score : 0"

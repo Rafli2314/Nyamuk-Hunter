@@ -1,5 +1,7 @@
 extends Area2D
 
+signal squashed
+
 @export var speed := 100
 
 var direction := Vector2.ZERO
@@ -15,9 +17,11 @@ func _ready():
 	
 func _process(delta):
 	position += direction * speed * delta
-
+	print(position)
+	
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
+				squashed.emit()
 				queue_free()
