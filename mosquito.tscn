@@ -2,11 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://dryeikco0ogur" path="res://icon.svg" id="1_dnsox"]
 [ext_resource type="Script" uid="uid://cj3rnpknkprdp" path="res://mosquito.gd" id="1_jlnsu"]
+[ext_resource type="AudioStream" uid="uid://bx2kcdq7d3ivw" path="res://media/mosquitos.mp3" id="3_s0ny3"]
+[ext_resource type="AudioStream" uid="uid://c38gqnpdj8s0h" path="res://media/slap-ahh.mp3" id="4_nvah4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlnsu"]
 radius = 27.018513
 
-[node name="Mosquito" type="Area2D" unique_id=1679721595]
+[node name="Mosquito" type="Area2D" unique_id=1679721595 groups=["mosquitos"]]
 script = ExtResource("1_jlnsu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857644230]
@@ -15,3 +17,9 @@ texture = ExtResource("1_dnsox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=752464133]
 shape = SubResource("CircleShape2D_jlnsu")
+
+[node name="buzz" type="AudioStreamPlayer" parent="." unique_id=605609098]
+stream = ExtResource("3_s0ny3")
+
+[node name="slap" type="AudioStreamPlayer" parent="." unique_id=1262662721]
+stream = ExtResource("4_nvah4")

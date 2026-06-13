@@ -18,3 +18,4 @@ func spawn_mosquito():
 		get_parent().add_score
 	)
 	get_parent().add_child(mosquito)
+	mosquito.speed += get_parent().mosquito_speed_bonus
